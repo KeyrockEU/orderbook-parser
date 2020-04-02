@@ -15,3 +15,8 @@ Example projects that shows how to obtain orderbook snapshots from Kraken.
 ## How to run
 
 Just `yarn start`.
+
+# How to run docker compose
+From the project root dir - just run 'docker-compose up'
+
+
