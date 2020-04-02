@@ -1,0 +1,25 @@
+version: '2.0'
+services:
+  prometheus:
+    image: prom/prometheus:v2.1.0
+    ports:
+      - 9090:9090
+    command: ['--config.file=/prometheus/prometheus.yml']
+    volumes:
+      - ./prometheus:/prometheus/
+
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+
+  app:
+    image: "mhart/alpine-node:12"
+    working_dir: /home/node/app/
+    volumes:
+      - ./orderbook-parser/:/home/node/app
+    ports:
+      - 5000:5000
+    command: "yarn start"
