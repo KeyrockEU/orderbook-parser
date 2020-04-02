@@ -19,4 +19,8 @@ Just `yarn start`.
 # How to run docker compose
 From the project root dir - just run 'docker-compose up'
 
+## Open grafana and add prometheus as datasource
+![prom](prometheus-datasource.png)
 
+## Add dashboard on grafana
+![graf](setup-dashboard.png)
